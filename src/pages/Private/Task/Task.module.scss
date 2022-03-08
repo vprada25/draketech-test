@@ -1,0 +1,15 @@
+.Task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+  overflow: hidden;
+  background: {
+    image: url('../../../assets/images/jpg/5437842.jpg');
+    repeat: no-repeat;
+    attachment: fixed;
+    position: center;
+    size: content;
+  }
+ 
+}
