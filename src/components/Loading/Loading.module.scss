@@ -1,6 +1,4 @@
-body {
-  background-color: #333;
-}
+
 .loading {
   position: fixed;
   float: left;
@@ -70,8 +68,8 @@ body {
   @for $i from 1 through 10 {
     .loading_#{$i} {
       @include inner();
-      -webkit-animation-delay: $i/4 + s;
-      animation-delay: $i/4 + s;
+      -webkit-animation-delay: #{$i * 0.1}s;
+      animation-delay: #{$i * 0.1}s;
     }
   }
 }
