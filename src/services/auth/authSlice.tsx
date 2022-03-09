@@ -13,8 +13,10 @@ export const initialState = {
   loading: false,
 }
 
+export const KEY_AUTH = 'AUTH'
+
 const AuthSlice = createSlice({
-  name: 'AUTH',
+  name: KEY_AUTH,
   initialState,
   reducers: {
     loginPending: (state, action: loginAction) => (
