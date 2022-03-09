@@ -8,10 +8,10 @@ const Home = () => {
 
   return (
     <div className={styles.Home}>
-      <div className='row gx-5 justify-content-around'>
+      <div className={styles.Text}>
         <h1>Welcome -  <span>{user}</span></h1>
-        <div className='col-md-6'>
-          <p className='justify-text'>
+        <div className='col-md-3'>
+          <p className='text-justify'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel
             voluptatem, quia iusto cum hic ipsam eligendi a nostrum necessitatibus
             libero reiciendis amet ullam tenetur ea perferendis itaque, expedita

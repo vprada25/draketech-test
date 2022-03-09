@@ -1,14 +1,48 @@
 import { Form, Input, Button, Select, Checkbox, Row, Col } from 'antd'
-import { PlusOutlined, UpCircleTwoTone, DownCircleTwoTone, MinusCircleTwoTone  } from '@ant-design/icons';
+import { PlusOutlined, UpCircleTwoTone, DownCircleTwoTone, MinusCircleTwoTone } from '@ant-design/icons';
+
+import { useContext } from 'react'
+import { v4 } from 'uuid'
+import { createTaskAPI } from '../../../../services/axios/index'
+import { TaskContext } from '../../../../context/TaskProvider';
+import { KEY_AUTH } from '../../../../services/auth/authSlice';
+import { useData } from '../../../../hooks/useData';
+import { currentAction } from '../../../../services/task/TaskAction';
+
 
 
 const AddTask = () => {
 
   const { Option } = Select
 
+  const { dispatch } = useContext(TaskContext);
+  const { user } = useData({ reducer: KEY_AUTH });
+
+
+  const onAddTask = (value: { title: string }) => {
+    const task = {
+      id: v4(),
+      title: value.title,
+      description: '',
+      createAt: new Date().toISOString(),
+      user: user,
+      completed: false
+    }
+    createTaskAPI(task).then(res => {
+      dispatch({
+        type: currentAction.ADD,
+        task: task
+      })
+    }
+    )
+  }
+
+
+
+
   return (
     <div className="row justify-content-center align-items-center">
-      <Form >
+      <Form onFinish={onAddTask}>
         <h1 className="text-center">Create Task</h1>
         <Row gutter={[16, 8]}>
           <Col span={12}>
@@ -54,8 +88,6 @@ const AddTask = () => {
               <Input placeholder="description" />
             </Form.Item>
           </Col>
-
-         
         </Row>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

@@ -1,15 +1,15 @@
 import axios from 'axios'
-import { URL_API } from '../../helpers/constants/env';
+import { URL_API, URL_API2 } from '../../helpers/constants/env';
 
 
-axios.defaults.baseURL = `${URL_API}`;
+axios.defaults.baseURL = `${URL_API2}`;
 
-export const getTaskAPI = async () => axios.get('/task')
+export const getTaskAPI = async () => axios.get('/todos')
 
-export const getTaskByIdAPI = async (id: any) => axios.get(`/task/${id}`)
+export const getTaskByIdAPI = async (id: number) => axios.get(`/todos/${id}`)
 
-export const createTaskAPI = async (task: any) => axios.post(`/task`, task)
+export const createTaskAPI = async (task: any) => axios.post(`/todos`, JSON.stringify(task))
 
-export const updateTaskAPI = async (task: any) => axios.put(`/task/${task.id}`, task)
+export const updateTaskAPI = async (task: any) => axios.put(`/todos/${task.id}`, task)
 
-export const deleteTaskByIdAPI = async (id: any) => axios.delete(`/task/${id}`)
+export const deleteTaskByIdAPI = async (id: any) => axios.delete(`/todos/${id}`)

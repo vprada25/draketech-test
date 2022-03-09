@@ -1,21 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
-  id: '',
-  description: '',
-  title: '',
-  createAt: '',
-  user: '',
+  userId: "",
+  id: "",
+  title: "",
+  completed: "",
 };
 
 export const KEY_TASK = 'TASK';
 
 
 const Tasks = createSlice({
-  name: 'TASKs',
+  name: 'TASK',
   initialState: [initialState],
   reducers: {
-    getTaskSlice: (state, action ) => {
+    getTaskSlice: (state, action) => {
       state = action.payload
       return state
     },

@@ -1,8 +1,14 @@
 .Home {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
+  min-height: 90vh;
+  .Text{
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+  }
   background: {
     image: url('../../../assets/images/jpg/5437842.jpg');
     repeat: no-repeat;
