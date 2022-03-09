@@ -55,11 +55,7 @@ const AddTask = () => {
             </Form.Item>
           </Col>
 
-          <Col span={6}>
-            <Form.Item name="modify">
-              <Checkbox>¿modifiable task?</Checkbox>
-            </Form.Item>
-          </Col>
+         
         </Row>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

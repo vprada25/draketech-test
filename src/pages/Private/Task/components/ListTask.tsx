@@ -1,8 +1,19 @@
+import axios from 'axios'
+import { useContext } from 'react'
+
 import { Table, Space, Tooltip, Button } from 'antd'
 import { DeleteOutlined, EditTwoTone } from '@ant-design/icons'
 
+import { TaskContext } from '../../../../context/TaskProvider'
+import { currentAction } from '../../../../services/task/TaskAction'
+import { basicTask } from '../../../../services/task/type'
+import { taskType } from '../../../../context/type'
+import { URL_API } from '../../../../helpers/constants/env'
+
 
 const LisTask = () => {
+  const {task, dispatch} = useContext(TaskContext)
+
   const data = [
     {
       title: 'Titulo',
@@ -45,10 +56,11 @@ const LisTask = () => {
   return (
     <div className= 'justify-content-center align-items-center'>
       <h3 className="text-center">Listado de Tareas</h3>
+
       <Table
       className=""
       columns={data}
-      
+      dataSource={task}
     />
     </div>
   )

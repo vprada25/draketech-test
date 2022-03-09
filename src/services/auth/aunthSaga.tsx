@@ -8,8 +8,10 @@ import { message } from 'antd'
 
 function* fakeLogin({ payload }: loginAction) {
   const validUser =DATA_USERS.find(
+    
     e => e.email === payload.email && e.password === payload.password
   )
+  console.log(validUser);
   if (validUser) {
     message.success('Inicio de sesión exitoso')
     yield put(
