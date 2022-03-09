@@ -1,15 +1,15 @@
 
 import Public from '../routes/Public/RoutesPublic';
 import Private from '../routes/Private/RoutesPrivate'
-import { useSelector } from 'react-redux'
 
 import { KEY_AUTH } from '../services/auth/authSlice'
+import { useData } from '../hooks/useData';
 
 function App() {
-  const auth = useSelector((state: any) => state[KEY_AUTH])
+  const { authentication } = useData({ reducer: KEY_AUTH });
   return (
     <div className="container-fluid">
-      { auth ? <Private /> : <Public />}
+      {authentication ? <Private /> : <Public />}
     </div>
   )
 }

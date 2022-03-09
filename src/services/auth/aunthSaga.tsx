@@ -13,7 +13,7 @@ function* fakeLogin({ payload }: loginAction) {
   if (validUser) {
     message.success('Inicio de sesión exitoso')
     yield put(
-      loginSuccess({ token: validUser.token, user: validUser.name })
+      loginSuccess({ token: validUser.token, user: validUser.user })
     )
   } else {
     message.error('No existe ese usuario, en nuestra base de datos')

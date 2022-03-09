@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
 
 import RootSaga from './Sagas'
-import RootReducers from './Reducers'
+import rootReducers from './Reducers'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -14,7 +14,7 @@ const Middlewares = () => {
 }
 
 const Store = configureStore({
-  reducer: RootReducers,
+  reducer: rootReducers,
   devTools: true,
   middleware: Middlewares(),
 })

@@ -12,7 +12,7 @@ const rootAppReducers = combineReducers({
 })
 
 const rootReducer = (state: any, action: AnyAction) => {
-  if (action.type === logout.type) {
+  if (action.type === 'AUTH/LOGOUT' || action.type === logout()) {
     state = {
       [KEY_AUTH]: initialState,
     }
