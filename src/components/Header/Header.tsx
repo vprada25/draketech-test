@@ -3,7 +3,18 @@ import { Layout, Menu, Tooltip } from 'antd'
 import { Link } from 'react-router-dom'
 import { LogoutOutlined } from '@ant-design/icons'
 
-const Header = ({ children }: { children: ReactNode }) => {
+import { useDispatch } from 'react-redux'
+import { logout } from '../../services/auth/authSlice'
+
+
+export const Header = ({ children }: { children: ReactNode }) => {
+  const dispatch = useDispatch()
+
+  const handleLogout = () => {
+    dispatch(logout())
+  }
+
+
   return (
     <Layout >
       <Layout.Header>
@@ -17,7 +28,7 @@ const Header = ({ children }: { children: ReactNode }) => {
             </Menu.Item>
             <Menu.Item key={2} >
               <Tooltip title="Close Session">
-                <LogoutOutlined  /* onClick={handleClickLogout} */ />
+                <LogoutOutlined  onClick={handleLogout} />
               </Tooltip>
             </Menu.Item>
           </Menu>
@@ -28,4 +39,3 @@ const Header = ({ children }: { children: ReactNode }) => {
   )
 }
 
-export default Header;

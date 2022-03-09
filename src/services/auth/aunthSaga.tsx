@@ -1,32 +1,32 @@
 import { put, takeLatest, all } from 'redux-saga/effects'
 
 import { loginPending, loginSuccess, loginFailed } from './authSlice'
-import { loginAction } from './type'
 
+import { DATA_USERS } from '../../helpers/dummy/users'
+import { loginAction } from './type'
 import { message } from 'antd'
-import { DB_USERS } from '../../helpers/dummy/users'
 
 function* fakeLogin({ payload }: loginAction) {
-  const validUser = DB_USERS.find(
+  const validUser =DATA_USERS.find(
     e => e.email === payload.email && e.password === payload.password
   )
   if (validUser) {
-    message.success('Successfully logged ')
+    message.success('Inicio de sesión exitoso')
     yield put(
       loginSuccess({ token: validUser.token, user: validUser.name })
     )
   } else {
-    message.error('Error logging ')
+    message.error('No existe ese usuario, en nuestra base de datos')
     yield put(
-      loginFailed({ error: 'Error' })
+      loginFailed({ error: 'No existe ese usuario, en nuestra base de datos' })
     )
   }
 }
 
-function* Observable() {
+function* ActionWatcher() {
   yield takeLatest(loginPending, fakeLogin)
 }
 
 export default function* AuthSaga() {
-  yield all([Observable()])
+  yield all([ActionWatcher()])
 }

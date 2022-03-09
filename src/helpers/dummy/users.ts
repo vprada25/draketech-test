@@ -7,12 +7,12 @@ type typeUsers = {
 }
 
 
-export const DB_USERS: typeUsers[] = [
+export const DATA_USERS: typeUsers[] = [
 
   {
     "guid": "TBY65UTU6OT",
     "name": "victor prada",
-    "email": "victorprada@yahoo.net",
+    "email": "victorprada@123.com",
     "password": "victorprada",
     "token": "DE02D93F-891C-3671-92AA-6AAD119C8A58"
   },
@@ -20,7 +20,7 @@ export const DB_USERS: typeUsers[] = [
     "guid": "WFR80ZFK1GV",
     "name": "Rebekah O'connor",
     "email": "rebekahoconnor9836@outlook.com",
-    "password": "LMN06ISM5ES",
+    "password": "",
     "token": "CFA1AA35-F84A-E56A-5286-CE4D523E8CC0"
   },
   {

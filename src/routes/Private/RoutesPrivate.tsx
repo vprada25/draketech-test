@@ -2,13 +2,13 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import Loading from '../../components/Loading/Loading'
-import Header from '../../components/Header/Header'
+import { Header } from '../../components/Header/Header'
 
 const Home = lazy(() => import('../../pages/Private/Home/Home'))
 const Task = lazy(() => import('../../pages/Private/Task/Taks'))
 const Error404 = lazy(() => import('../../components/Error404/Error404'))
 
-const PrivateRoutes = () => {
+const Private = () => {
   return (
     <BrowserRouter>
       <Header>
@@ -27,4 +27,4 @@ const PrivateRoutes = () => {
 }
 
 
-export default PrivateRoutes
+export default Private

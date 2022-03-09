@@ -44,11 +44,13 @@ const AuthSlice = createSlice({
     logout: (state) => (
       {
         ...state,
-        loading: false,
         authentication: false,
+        error: false,
+        success: false,
+        loading: false,
         token: '',
-        user: '',
-        message: 'Successful logout',
+        message: '',
+        username: '',
       }),
   },
 })

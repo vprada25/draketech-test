@@ -6,7 +6,7 @@ import  Loading  from '../../components/Loading/Loading'
 const Login = lazy(() => import('../../pages/Public/Login/Login'))
 const Error404 = lazy(() => import('../../components/Error404/Error404'))
 
-const PublicRoutes = () => {
+const Public = () => {
   return (
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
@@ -21,5 +21,5 @@ const PublicRoutes = () => {
   )
 }
 
-export default PublicRoutes
+export default Public
 
