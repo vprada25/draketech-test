@@ -1,14 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
+import RootReducers from './Reducers';
 
-
-configureStore({
+const Store = configureStore({
   reducer: {
-    // reducer
+    RootReducers,
   },
   devTools: true,
+  middleware: [],
 });
 
-export default configureStore;
+export default Store;
 
 
 

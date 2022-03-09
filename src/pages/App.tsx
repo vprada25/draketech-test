@@ -5,8 +5,8 @@ import PrivateRoutes from '../routes/Private/RoutesPrivate'
 function App() {
   return (
     <div className="container-fluid">
-      <PublicRoutes></PublicRoutes>
-      {/* <PrivateRoutes></PrivateRoutes> */}
+     {/*  <PublicRoutes></PublicRoutes> */}
+      <PrivateRoutes></PrivateRoutes>
     </div>
   )
 }
